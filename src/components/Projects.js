@@ -32,7 +32,7 @@ const projectsData = [
     description: "Task management app with drag-and-drop using MERN & JWT auth.",
     moreInfo: "Developed a dynamic Kanban Board using HTML, CSS, and JavaScript that allows users to create, organize, and move tasks across workflow columns with intuitive drag-and-drop functionality. Integrated Web Speech API to provide spoken welcome and usage instructions, improving accessibility and user experience. Designed a clean and responsive interface with subtle animations for smooth task management.",
     techStack: ["HTML", "CSS", "JS"],
-    demoLink: "https://683c3843f2ded0831529f502--kanbannboard.netlify.app/",
+    demoLink: "https://kanban-board-beige-omega.vercel.app/",
     repoLink: "https://github.com/ManikumarGajam/kanban-board",
     image: "https://th.bing.com/th/id/OIP.sAZ212wyET_bm0ThlvQfyAHaFR?w=223&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
   },
