@@ -88,7 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0d324d, #342635);
+  background: transparent;
   overflow: hidden;
 }
 .eva {
@@ -152,6 +152,7 @@
   margin-block-start: 0.25rem;
   border-radius: 47% 53% 45% 55% / 12% 9% 90% 88%;
   background: linear-gradient(to right, white 35%, gray);
+  box-shadow: 5px 5px grey;
 }
 .hand {
   position: absolute;

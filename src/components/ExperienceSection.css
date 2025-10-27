@@ -40,13 +40,13 @@
   align-items: center;
   backface-visibility: hidden;
   color: #e2e4e8;
-  background: black;
+  background: rgba(10, 34, 2, 0.437);
   border-radius: 1.2rem;
   box-shadow: 0 0 60px 10px #15441e, 0 0 60px 10px #4b5776;
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
+ 
   color: white;
   transform: rotateY(180deg);
 }
@@ -316,20 +316,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* other card styles */
+  background: rgba(10, 34, 2, 0.437);
  
 }
 
 .card-back-scroll {
-  /* Fills available height minus space for header/footer/buttons */
+ 
   flex: 1 1 auto;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0.7rem;
   /* Add this for smooth UI */
-  scrollbar-width: thin;       /* Firefox */
-  scrollbar-color: #bbb #222;  /* Firefox */
+  scrollbar-width: thin;       
+  scrollbar-color: #bbb #222;  
 }
 .card-back-scroll::-webkit-scrollbar {
   width: 6px;

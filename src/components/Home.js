@@ -50,12 +50,12 @@ export default function Home() {
             And I'm a&nbsp;
             <ReactTyped
               strings={[
-                "Frontend Developer",
-                "Full Stack Developer",
-                "React Developer",
-                "Node.js Developer",
                 "MERN Stack Developer",
-                "Backend Developer"
+                "Frontend Developer",
+                "React Developer",
+                "Backend Developer",
+                "Node.js Developer",
+                "Full Stack Developer"
               ]}
               typeSpeed={48}
               backSpeed={36}
