@@ -1,13 +1,106 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.skills-section {
+  min-height: 60vh;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.skills-section h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.projects-section {
+  background-color: #ffffff;
+  color: #333;
+}
+
+
+.projects-section .badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.7em;
+}
+
+.experience-section {
+  min-height: 60vh;
+  color: #333;
+}
+
+.education-section {
+  background: linear-gradient(135deg, #0d324d, #342635);
+  color: #333;
+  min-height: 60vh;
+}
+
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background, font, etc. */
+}
+
+.hero-section > div {
+  flex: 1;
+}
+
+/* Mobile styles */
+@media (max-width: 800px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 24px 4vw 0 4vw;
+  }
+  .hero-section > div {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto;
+    text-align: center;
+  }
+  .hero-section h1, .hero-section h2, .hero-section h3, .hero-section p {
+    text-align: center !important;
+  }
+}
+
+/* Shrink button background color from left to right on hover */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #031d4a; /* ensure full background color coverage */
+}
+
+main, section {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.slick-prev, .slick-next {
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1c232fbb;
+  top: 53%; /* Center vertically with your card */
+  transform: translateY(-50%);
+  box-shadow: 0 2px 15px #0117;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.22s;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #24f4e4 !important;
+  opacity: 1 !important;
+  font-size: 32px;
+}
+
+/* Responsive: bring arrows further INSIDE the slider at small widths */
+@media (max-width: 700px) {
+  .slick-prev {
+    left: 2px !important;
+  }
+  .slick-next {
+    right: 2px !important;
+  }
 }
