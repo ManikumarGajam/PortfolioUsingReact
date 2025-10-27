@@ -200,7 +200,7 @@
           drop-shadow(0 0 6px #ffd30091);
   backdrop-filter: blur(6px) saturate(1.36);
   -webkit-backdrop-filter: blur(11px) saturate(1.36);
-  background-color: rgb(1, 57, 1);
+  background-color: rgb(2, 38, 2);
   
 }
 @keyframes rotate {
