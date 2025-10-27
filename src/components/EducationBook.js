@@ -84,7 +84,7 @@ export default function EducationBook() {
           <div className="book">
             {/* Cover with B.Tech details and open button */}
             <div
-            style={{border: "5px solid rgba(128, 128, 123, 1)", backgroundColor: "rgba(13, 24, 22, 0.92)", color: "white"}}
+            style={{border: "5px solid rgba(128, 128, 123, 1)", backgroundColor: "black", color: "white"}}
               className={`cover ${isOpen ? "open" : ""}`}
               onClick={openBook}
               role="button"

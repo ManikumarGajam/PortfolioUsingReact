@@ -214,7 +214,7 @@ const Section = styled.section`
     .section-inner { width: 99vw; gap: 4px; }
     .profile-img-box { width:180px; height:180px;}
     .profile-img { width:160px; height:160px; }
-    .img-glow { width:150px; height:150px;}
+    
   }
 
   @media (max-width: 950px) {

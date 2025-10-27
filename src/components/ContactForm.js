@@ -322,7 +322,8 @@ const StyledWrapper = styled.div`
   }
   .socialContainer {
     width: 52px; height: 52px;
-    background-color: rgb(44,44,44);
+    background-color: black;
+    border: 1px solid white;
     display: flex; align-items: center; justify-content: center;
     transition-duration: 0.3s;
     overflow: hidden;

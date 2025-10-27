@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
-        <Navbar.Brand href="#home">My Portfolio</Navbar.Brand>
+        <Navbar.Brand href="#home">Gajam Manikumar</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">

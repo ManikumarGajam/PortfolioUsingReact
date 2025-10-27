@@ -40,7 +40,7 @@
   align-items: center;
   backface-visibility: hidden;
   color: #e2e4e8;
-  background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
+  background: black;
   border-radius: 1.2rem;
   box-shadow: 0 0 60px 10px #15441e, 0 0 60px 10px #4b5776;
 }
