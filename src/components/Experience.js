@@ -21,7 +21,7 @@ export default function ExperienceSection() {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <>
+    <div id='experience'>
       <h1 className="experience-heading">Experience</h1>
       <section className="experience-root">
 
@@ -102,7 +102,7 @@ export default function ExperienceSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
 
   );
 }

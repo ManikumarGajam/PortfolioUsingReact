@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
+// --- Put your project cards array here ---
 const projectsData = [
   {
     title: "Modern Calculator App",
@@ -18,7 +21,7 @@ const projectsData = [
   {
     title: "AI-Chatbot",
     description: "An AI chatbot that answers user queries in real time using the Gemini API.",
-    moreInfo:"Developed an AI-powered chatbot using the Gemini API integrated with HTML, CSS, and JavaScript. The chatbot can understand user queries and generate intelligent responses in real time. Designed a minimal and responsive interface for smooth user interaction, with seamless API integration and dynamic message handling using JavaScript.",
+    moreInfo: "Developed an AI-powered chatbot using the Gemini API integrated with HTML, CSS, and JavaScript. The chatbot can understand user queries and generate intelligent responses in real time. Designed a minimal and responsive interface for smooth user interaction, with seamless API integration and dynamic message handling using JavaScript.",
     techStack: ["HTML", "CSS", "Javascript"],
     demoLink: "https://ai-chatbot-myproject.netlify.app/",
     repoLink: "https://github.com/ManikumarGajam/Ai-chatbot-project",
@@ -27,7 +30,7 @@ const projectsData = [
   {
     title: "Kanban Board",
     description: "Task management app with drag-and-drop using MERN & JWT auth.",
-    moreInfo:"Developed a dynamic Kanban Board using HTML, CSS, and JavaScript that allows users to create, organize, and move tasks across workflow columns with intuitive drag-and-drop functionality. Integrated Web Speech API to provide spoken welcome and usage instructions, improving accessibility and user experience. Designed a clean and responsive interface with subtle animations for smooth task management.",
+    moreInfo: "Developed a dynamic Kanban Board using HTML, CSS, and JavaScript that allows users to create, organize, and move tasks across workflow columns with intuitive drag-and-drop functionality. Integrated Web Speech API to provide spoken welcome and usage instructions, improving accessibility and user experience. Designed a clean and responsive interface with subtle animations for smooth task management.",
     techStack: ["HTML", "CSS", "JS"],
     demoLink: "https://683c3843f2ded0831529f502--kanbannboard.netlify.app/",
     repoLink: "https://github.com/ManikumarGajam/kanban-board",
@@ -36,16 +39,16 @@ const projectsData = [
   {
     title: "TODO",
     description: "A secure To-Do app with sign-in, task management, and search filtering.",
-    moreInfo:"Developed a full-stack To-Do application using the MERN stack (MongoDB, Express.js, React, Node.js). The app allows users to sign up, log in, add, edit, delete, and search tasks, with authentication ensuring that each user’s tasks are private and securely stored in the database. Implemented real-time filtering, responsive UI, and efficient data handling through REST APIs for smooth user experience.",
+    moreInfo: "Developed a full-stack To-Do application using the MERN stack (MongoDB, Express.js, React, Node.js). The app allows users to sign up, log in, add, edit, delete, and search tasks, with authentication ensuring that each user’s tasks are private and securely stored in the database. Implemented real-time filtering, responsive UI, and efficient data handling through REST APIs for smooth user experience.",
     techStack: ["MERN"],
     demoLink: "https://todo-mern-frontend-blond.vercel.app",
     repoLink: "https://github.com/ManikumarGajam",
     image: "https://th.bing.com/th/id/OIP.-PzGhGO_SLuUKWdg0iXWpwHaFW?w=249&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
   },
   {
-    title: "Admin & Agent Management System",
+    title: "Admin Management Portal",
     description: "A MERN-based admin panel for secure login, agent management, and CSV list distribution.",
-    moreInfo:"Developed a full-stack MERN application featuring secure admin authentication using JWT, agent creation and management, and intelligent CSV upload functionality that distributes data equally among agents. Implemented file validation, user-friendly dashboard, and MongoDB storage for all agent and task data.",
+    moreInfo: "Developed a full-stack MERN application featuring secure admin authentication using JWT, agent creation and management, and intelligent CSV upload functionality that distributes data equally among agents. Implemented file validation, user-friendly dashboard, and MongoDB storage for all agent and task data.",
     techStack: ["MERN"],
     demoLink: "https://taskmanager.example.com",
     repoLink: "https://github.com/ManikumarGajam",
@@ -56,239 +59,290 @@ const projectsData = [
 export default function Projects() {
   const [flippedIndex, setFlippedIndex] = useState(null);
 
-  const settings = {
-    infinite: true,
-    centerMode: true,
-    slidesToShow: 3,
-    centerPadding: '0px',
-    speed: 600,
-    autoplay: true,
-    autoplaySpeed: 3500,
-    arrows: true,
-    initialSlide: 2,
-    responsive: [
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          arrows: true,
-        },
-      },
-    ],
-  };
-
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .slick-center .project-card {
-        border: 2.5px solid #f4f8f8ff !important;
-        filter: brightness(1.18);
-        z-index: 2;
-      }
-      .project-card {
-        transition: box-shadow 0.34s, filter 0.34s, border 0.34s;
-      }
-    `;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
-
   return (
-    <section style={{ background: "#031d4a", padding: "3rem 0", color: "#e0f6ff" }}>
+    <Section id="projects">
       <Container>
         <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Projects</h2>
-        <Slider {...settings}>
+        <StyledSwiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={24}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true, dynamicBullets: true }}
+          breakpoints={{
+            0: { slidesPerView: 1, centeredSlides: false },
+            800: { slidesPerView: 3, centeredSlides: false }
+          }}
+          style={{ paddingBottom: "2.5rem" }}
+        >
           {projectsData.map((project, i) => (
-            <div key={i}>
+            <SwiperSlide key={i}>
               <CardFlipperVert>
                 <CardInnerVert flipped={flippedIndex === i}>
                   {/* FRONT */}
-                  <div
-                    className="project-card"
-                    style={{
-                      margin: "0 16px",
-                      padding: "1.2rem 1.2rem 2.4rem 1.2rem",
-                      borderRadius: 20,
-                      background: "rgba(30, 28, 34, 1)",
-                      boxShadow: "0 4px 18px #13224a50",
-                      border: "1px solid white",
-                      minHeight: "390px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      backfaceVisibility: 'hidden',
-                      position: "absolute",
-                      inset: 0,
-                    }}
-                  >
+                  <ProjectCard>
                     <img
                       src={project.image}
                       alt={project.title}
-                      style={{
-                        width: "100%",
-                        borderRadius: 12,
-                        boxShadow: "0 8px 32px #22e7f222",
-                        objectFit: "cover",
-                        height: 170
-                      }}
+                      className="project-img"
                     />
-                    <h4 style={{ margin: "1rem 0 0.2rem", color: "#22ffe5" }}>{project.title}</h4>
-                    <div style={{ color: "#d0f6ff", fontSize: 15, minHeight: 42 }}>
-                      {project.description}
-                    </div>
-                    <div style={{ marginTop: 8 }}>
+                    <h4 className="project-title">{project.title}</h4>
+                    <div className="project-desc">{project.description}</div>
+                    <div className="tech-bar">
                       {project.techStack.map((t) => (
-                        <span
-                          key={t}
-                          style={{
-                            fontSize: 13,
-                            background: "black",
-                            color: "white",
-                            marginRight: 8,
-                            padding: "3px 12px",
-                            borderRadius: 11,
-                            border: "0.5px solid white"
-                          }}
-                        >
-                          {t}
-                        </span>
+                        <span className="tech-pill" key={t}>{t}</span>
                       ))}
                     </div>
-                    <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
-                      <a
-                        href={project.demoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          background: "white",
-                          backgroundSize: "200% 100%",
-                          backgroundPosition: "left",
-                          color: "black",
-                          padding: "0.5em 1.1em",
-                          borderRadius: 12,
-                          textDecoration: "none",
-                          border: "none",
-                          fontWeight: 600,
-                          transition: "background-position 0.4s"
-                        }}
-                        onMouseOver={e => e.currentTarget.style.backgroundPosition = 'right'}
-                        onMouseOut={e => e.currentTarget.style.backgroundPosition = 'left'}
-                      >
+                    <ButtonRow>
+                      <DemoButton href={project.demoLink} target="_blank" rel="noopener noreferrer">
                         Live Demo
-                      </a>
-                      <a
-                        href={project.repoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          background: "white",
-                          backgroundSize: "200% 100%",
-                          backgroundPosition: "left",
-                          color: "black",
-                          padding: "0.5em 1.1em",
-                          borderRadius: 12,
-                          textDecoration: "none",
-                          border: "none",
-                          fontWeight: 500,
-                          transition: "background-position 0.4s"
-                        }}
-                        onMouseOver={e => e.currentTarget.style.backgroundPosition = 'right'}
-                        onMouseOut={e => e.currentTarget.style.backgroundPosition = 'left'}
-                      >
+                      </DemoButton>
+                      <SourceButton href={project.repoLink} target="_blank" rel="noopener noreferrer">
                         Source Code
-                      </a>
-                    </div>
-                    <div style={{
-                      marginTop: "0.22em",
-                      display: "flex",
-                      gap: 10,
-                      width: "100%",
-                      justifyContent: "center"
-                    }}>
-                      <StyledWrapper>
-                        <button
-                          className="cssbuttons-io-button"
-                          type="button"
-                          onClick={() => setFlippedIndex(i)}
-                        >
-                          More
-                          <div className="icon">
-                            <svg height={22} width={22} viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0 0h24v24H0z" fill="none" />
-                              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
-                            </svg>
-                          </div>
-                        </button>
-                      </StyledWrapper>
-                    </div>
-                  </div>
-                  {/* BACK */}
-                  <div
-                    className="project-card"
-                    style={{
-                      margin: "0 16px",
-                      padding: "1.2rem",
-                      borderRadius: 20,
-                      background: "rgba(30, 28, 34, 1)",
-                      boxShadow: "0 4px 18px #13224a50",
-                      border: "1px solid white",
-                      minHeight: "390px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backfaceVisibility: 'hidden',
-                      position: "absolute",
-                      inset: 0,
-                      transform: "rotateX(180deg)",
-                    }}
-                  >
-                    <h3 style={{ color: "#22ffe5", marginBottom: 16 }}>
-                      {project.title}
-                    </h3>
-                    <div style={{
-                      color: "#d0f6ff",
-                      fontSize: 16,
-                      marginBottom: 32,
-                      textAlign: "center"
-                    }}>
-                      {project.moreInfo}
-                    </div>
-                    <StyledWrapper>
-                      <button
-                        className="cssbuttons-io-button"
-                        type="button"
-                        style={{ background: "#f34d4d" }}
-                        onClick={() => setFlippedIndex(null)}
-                      >
-                        Back
+                      </SourceButton>
+                    </ButtonRow>
+                    <MoreButtonRow>
+                      <MoreButton onClick={() => setFlippedIndex(i)}>
+                        More
                         <div className="icon">
-                          <svg height={24} width={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg height={22} width={22} viewBox="0 0 22 22">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
+                          </svg>
+                        </div>
+                      </MoreButton>
+
+                    </MoreButtonRow>
+                  </ProjectCard>
+                  {/* BACK */}
+                  <ProjectCard back>
+                    <h3 style={{ color: "#22ffe5", marginBottom: 16 }}>{project.title}</h3>
+                    <div className="project-moreinfo">{project.moreInfo}</div>
+                    
+                      <BackButton type="button" onClick={() => setFlippedIndex(null)}>
+                        Back
+                        <span className="icon">
+                          <svg height={24} width={24} viewBox="0 0 24 24">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M7.828 13l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414L7.828 11H20v2z" fill="currentColor" />
                           </svg>
-                        </div>
-                      </button>
-                    </StyledWrapper>
-                  </div>
+                        </span>
+                      </BackButton>
+                    
+                  </ProjectCard>
                 </CardInnerVert>
               </CardFlipperVert>
-            </div>
+            </SwiperSlide>
           ))}
-        </Slider>
-        <p style={{ color: "#74b9ff", textAlign: "center", marginTop: "1.5rem", fontSize: 14 }}>
-          Swipe, click arrows, or scroll to browse my projects
-        </p>
+        </StyledSwiper>
+        <FooterText>
+          Swipe/click arrows/scroll right to browse my projects
+        </FooterText>
       </Container>
-    </section>
+    </Section>
   );
 }
 
+// --- Styled Components (same colors & styles you had) ---
+const Section = styled.section`
+  background: #031d4a;
+  padding: 3.1rem 0;
+  color: #e0f6ff;
+`;
+
+
+const ButtonRow = styled.div`
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (max-width: 800px) { gap: 5px; }
+`;
+
+const DemoButton = styled.a`
+  background: white;
+  color: black;
+  padding: 0.5em 1.1em;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  background-size: 200% 100%;
+  background-position: left;
+  min-width: 110px;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  @media (max-width: 800px) {
+    min-width: 140px;
+    font-size: 14px;
+    padding: 0.7em 1.7em;
+  }
+`;
+
+const SourceButton = styled(DemoButton)`
+  font-weight: 500;
+`;
+
+// --- Animated "More" button styled to match Demo/Source size/layout ---
+const MoreButton = styled.button`
+  background: #047e13;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  min-width: 110px;
+  cursor: pointer;
+  padding: 0.5em 1.1em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  transition: background 0.22s, min-width 0.22s;
+  span, .icon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.7em;
+    background: white;
+    position: absolute;
+    right: 0.3em;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  &:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  &:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  &:active .icon {
+    transform: scale(0.95);
+  }
+  @media (max-width: 800px) {
+    min-width: 140px;
+    font-size: 14px;
+    padding: 0.7em 1.7em;
+    height: 2.2em;
+    .icon { height: 2em; width: 2em;}
+  }
+`;
+
+const BackButton = styled.button`
+  background: #047e13;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  min-width: 110px;
+  cursor: pointer;
+  padding: 0.5em 1.1em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  transition: background 0.22s, min-width 0.22s;
+  span, .icon {
+    display: inline-flex;
+    align-items: center;
+  
+    background: white;
+    position: absolute;
+    right: 0.1em;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  &:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  &:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  &:active .icon {
+    transform: scale(0.95);
+  }
+  @media (max-width: 800px) {
+    min-width: 110px;
+    font-size: 16px;
+    padding: 0.7em 2.0em 0.7em 1.3em;
+    
+    height: 2.2em;
+    .icon { height: 2em; width: 2em;}
+  }
+`;
+
+
+
+const StyledSwiper = styled(Swiper)`
+  position: relative;
+  padding-left: 31px;
+  padding-right: 31px;
+
+  .swiper-button-prev, .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .swiper-button-prev { left: 0; }
+  .swiper-button-next { right: 0; }
+   @media (max-width: 799px) {
+    padding-left: 5px;
+    padding-right: 5px;
+    .swiper-button-prev { left: -11.5px; }
+  .swiper-button-next { right: -11.5px; }
+  }
+  @media (min-width: 800px) {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+`;
+
+
 const CardFlipperVert = styled.div`
   perspective: 1200px;
-  position: relative;
   height: 420px;
+  width: 100%;
+  @media (max-width: 800px) {
+    height: 380px;
+  }
 `;
 
 const CardInnerVert = styled.div`
@@ -299,62 +353,91 @@ const CardInnerVert = styled.div`
   transform-style: preserve-3d;
   ${({ flipped }) =>
     flipped
-      ? css`
-          transform: rotateX(180deg);
-        `
-      : css`
-          transform: rotateX(0deg);
-        `}
+      ? css`transform: rotateX(180deg);`
+      : css`transform: rotateX(0deg);`}
 `;
 
-const StyledWrapper = styled.div`
-  .cssbuttons-io-button {
-    background: #047e13ff;
+const ProjectCard = styled.div`
+  margin: 0 8px;
+  padding: 1.2rem 1.2rem 2.4rem 1.2rem;
+  border-radius: 20px;
+  background: rgba(30, 28, 34, 1);
+  box-shadow: 0 4px 18px #13224a50;
+  border: 1px solid white;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  ${({ back }) =>
+    back &&
+    css`
+      justify-content: center;
+      transform: rotateX(180deg);
+      text-align: center;
+    `}
+  .project-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px #22e7f222;
+    object-fit: cover;
+    height: 170px;
+  }
+  .project-title {
+    margin: 1rem 0 0.2rem;
+    color: #22ffe5;
+  }
+  .project-desc {
+    color: #d0f6ff;
+    font-size: 15px;
+    min-height: 42px;
+    text-align: center;
+  }
+  .tech-bar {
+    margin-top: 8px;
+  }
+  .tech-pill {
+    font-size: 13px;
+    background: black;
     color: white;
-    font-family: inherit;
-    
-    padding-left: 1.2em;
-    font-size: 14px;
-    font-weight: 400;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
-    overflow: hidden;
-    position: relative;
-    height: 2.8em;
-    padding-right: 3.3em;
-    cursor: pointer;
-    margin-top: "0.5em",
+    margin-right: 8px;
+    padding: 3px 12px;
+    border-radius: 11px;
+    border: 0.5px solid white;
   }
-  .cssbuttons-io-button .icon {
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-    right: 0.3em;
-    transition: all 0.3s;
+  .project-moreinfo {
+    color: #d0f6ff;
+    font-size: 16px;
+    margin-bottom: 32px;
+    text-align: center;
   }
-  .cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
+  @media (max-width: 800px) {
+    min-height: 310px;
+    padding: 0.7rem 0.4rem 1.3rem 0.4rem;
+    margin: 0 2px;
+    .project-img { height: 110px; }
+    .tech-bar { margin-top: 6px; }
+    .tech-pill { font-size: 11px; padding: 2px 8px; margin-right: 5px; }
   }
-  .cssbuttons-io-button .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #7b52b9;
-  }
-  .cssbuttons-io-button:hover .icon svg {
-    transform: translateX(0.1em);
-  }
-  .cssbuttons-io-button:active .icon {
-    transform: scale(0.95);
-  }
+
+  
+`;
+
+
+const MoreButtonRow = styled.div`
+  margin-top: 0.22em;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+`;
+
+
+const FooterText = styled.p`
+  color: #74b9ff;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 14px;
 `;

@@ -101,7 +101,7 @@ function ContactForm() {
   });
 
   return (
-    <StyledWrapper>
+    <StyledWrapper id="contact">
       
       <div className="main-center">
         <div className="center-side">

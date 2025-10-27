@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export default function Home() {
   return (
-    <Section>
+    <Section id="home">
       <div className="section-inner">
         <div className="profile-col">
           <motion.div
@@ -15,7 +15,7 @@ export default function Home() {
             transition={{ type: "spring", duration: 1.2, bounce: 0.33 }}
             className="profile-img-box"
           >
-            <img src="/profile.jpg" alt="Your profile" className="profile-img" />
+            <img src="/pp2.jpg" alt="Your profile" className="profile-img" />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -159,37 +159,24 @@ const Section = styled.section`
   }
   .profile-col { flex:1; display: flex; justify-content: center; align-items: center; }
   .profile-img-box {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid white;
-    
+     width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
   }
   .profile-img {
     width: 270px;
-    height: 270px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    object-fit: cover;
+  height: 270px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
 }
-  .img-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 280px;
-    height: 280px;
-    background: radial-gradient(circle,#23d6f655 0%,#07214d00 85%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    filter: blur(24px);
-    z-index: 0;
-    pointer-events: none;
-  }
+  
   .info-col {
     flex:2;
     display: flex;
@@ -226,7 +213,7 @@ const Section = styled.section`
   @media (max-width: 510px) {
     .section-inner { width: 99vw; gap: 4px; }
     .profile-img-box { width:180px; height:180px;}
-    .profile-img { width:120px; height:120px; }
+    .profile-img { width:160px; height:160px; }
     .img-glow { width:150px; height:150px;}
   }
 
