@@ -278,6 +278,21 @@ const Section = styled.section`
   .stats-row { justify-content: center !important; }
   .intro-title, .intro-name, .intro-role, .intro-desc { text-align: center !important; }
 }
+/* (max-width: 1050px) for mobile/tablet/desktop-mode-on-mobile,
+   and reduce image size only if viewport height is small */
+@media (max-width: 1050px) and (max-height: 600px) {
+  .profile-img-box {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .profile-img {
+    width: 95px !important;
+    height: 95px !important;
+  }
+  .section-inner {
+    gap: 8px !important;
+  }
+}
 
 
 `;
