@@ -257,9 +257,8 @@ const Section = styled.section`
   }
     @media (max-width: 1023px) {
   min-height: 100vh !important;
-  
+  height: 50vh !important;
   align-items: center !important;
-  
   
 }
 
