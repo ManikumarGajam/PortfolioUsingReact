@@ -474,7 +474,6 @@
   .about-box {
     width: 85vw !important;
     min-width: 0 !important;
-    max-width: 97vw !important;
     box-sizing: border-box;
     padding-left: 1vw;
     padding-right: 1vw;
