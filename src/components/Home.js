@@ -143,12 +143,17 @@ export default function Home() {
 const Section = styled.section`
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   color: #fff;
   background: linear-gradient(120deg,#04132e 35%,#07214d 100%);
   font-family: Poppins,sans-serif;
   width: 100vw;
+  @media (max-width: 950px) {
+    align-items: flex-start !important; // override for mobile/tablet/desktop-mode mobile
+    padding-top: 22px; /* or your preference */
+    min-height: 0;     /* so it doesn't force full height centering */
+  }
   .section-inner {
     display: flex;
     width: 95vw;
@@ -255,35 +260,6 @@ const Section = styled.section`
     padding-top: 18px;  /* Adjust as you like for top space */
     padding-bottom: 10px;
   }
-
-  @media (min-width: 1024px) {
-  .section-inner {
-    justify-content: center;
-    margin: 0 auto;
-    width: 95vw;
-    max-width: 1050px;
-    align-items: center;
-    gap: 36px;
-  }
-  .profile-col {
-    flex: 1 0 320px;
-    max-width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .info-col {
-    flex: 2 1 500px;
-    min-width: 0;
-  }
-}
-@media (max-width: 950px) {
-  min-height: unset;
-  padding-top: 20px;
-  padding-bottom: 0;
-  align-items: flex-start;
-}
-
 `;
 
 const SocialRow = styled.div`
