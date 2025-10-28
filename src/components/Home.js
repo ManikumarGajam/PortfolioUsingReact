@@ -260,6 +260,14 @@ const Section = styled.section`
     padding-top: 18px;  /* Adjust as you like for top space */
     padding-bottom: 10px;
   }
+    @media (max-width: 1023px) {
+  min-height: 50vh !important;
+  height: auto !important;
+  align-items: center !important;
+  padding-top: 18px !important;
+  padding-bottom: 0 !important;
+}
+
 `;
 
 const SocialRow = styled.div`
