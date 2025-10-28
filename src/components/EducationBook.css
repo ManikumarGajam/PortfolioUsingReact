@@ -466,8 +466,4 @@ ul {
     padding: 1.2rem 0.6rem !important;
   }
 }
-@media (max-height: 700px) {
-  .education-section {
-    min-height: 40vh !important;
-  }
-}
+

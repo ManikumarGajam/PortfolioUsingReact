@@ -102,3 +102,8 @@ main, section {
     right: 2px !important;
   }
 }
+@media (max-height: 700px) {
+  .education-section {
+    min-height: 40vh !important;
+  }
+}
