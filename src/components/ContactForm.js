@@ -233,10 +233,10 @@ const StyledWrapper = styled.div`
   }
   h2 {
     font-size: 1.45em;
-    color: #0ef;
+    color: white;
     margin-bottom: .4em;
     text-align: center;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 1.4px;
   }
   form {
@@ -251,7 +251,7 @@ const StyledWrapper = styled.div`
     border-radius: 32px;
     background: transparent;
     padding: 8px 12px;
-    font-size: 1.3em;
+    font-size: 0.99em;
     color: #fff;
     outline: none;
     transition: border-color 0.3s;
@@ -284,7 +284,7 @@ const StyledWrapper = styled.div`
     color: #0ef;
   }
   .btn {
-    background: #0ef;
+    background: rgba(223, 231, 232, 1);
     border: none;
     color: #222839;
     font-weight: 700;
@@ -302,7 +302,7 @@ const StyledWrapper = styled.div`
     display: block;
     text-align: center;
   }
-  .btn:hover { background: #14ffd9; color: #17306f;}
+  .btn:hover { background: #1dc133ff; color: #eeeff3ff; box-shadow: 5px white;}
   .dash {
     animation: blink 3s linear infinite;
     animation-delay: calc(var(--i) * (3s / 50));
@@ -322,7 +322,7 @@ const StyledWrapper = styled.div`
   }
   .socialContainer {
     width: 52px; height: 52px;
-    background-color: black;
+    background-color: transparent;
     border: 1px solid white;
     display: flex; align-items: center; justify-content: center;
     transition-duration: 0.3s;
@@ -336,7 +336,7 @@ const StyledWrapper = styled.div`
   .socialContainer:active { transform: scale(0.9);}
   .socialSvg { width: 17px; height: 17px; fill: #fff;}
   .socialSvg path { fill: #fff; }
-  .socialContainer:hover .socialSvg { animation: slide-in-top 0.3s both;}
+  .socialContainer:hover .socialSvg { animation: slide-in-top 0.3s both; }
   @keyframes slide-in-top { 0% { transform: translateY(50px); opacity: 0;} 100% { transform: translateY(0); opacity: 1; }}
   .card:has(.socialContainer:hover) .socialContainer:not(:hover) { opacity: 0.1; }
 
@@ -732,8 +732,8 @@ const StyledWrapper = styled.div`
     max-height: 350px !important;
   }
   .circle-form {
-    width: 95vw !important;
-    height: 95vw !important;
+    width: 90vw !important;
+    height: 90vw !important;
     min-width: 250px !important;
     min-height: 250px !important;
     max-width: 370px !important;
@@ -819,18 +819,7 @@ const StyledWrapper = styled.div`
 
     
   }
-@media (max-width: 1050px), (max-height: 800px) {
-  .main-center {
-    height: auto !important;
-    min-height: 0 !important;
-    min-width: unset !important;
-    padding-top: 10px !important;
-    padding-bottom: 6px !important;
-    gap: 14px !important;
-    
-  }
-}
-
 `;
+
 
 export default ContactForm;
