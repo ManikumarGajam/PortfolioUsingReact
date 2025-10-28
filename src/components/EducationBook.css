@@ -419,7 +419,7 @@
 .education-section-container {
   display: flex;
   flex-direction: column;
-  align-items: center;margin-bottom: 1.5rem;
+  align-items: center;
 }
 
 .education-heading {
