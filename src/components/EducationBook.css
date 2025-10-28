@@ -482,3 +482,11 @@ ul {
     flex-direction: column !important;
   }
 }
+@media (max-width: 1100px), (max-height: 750px) {
+  .education-section-container {
+    height: 100vh;
+    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
