@@ -827,7 +827,7 @@ const StyledWrapper = styled.div`
     padding-top: 10px !important;
     padding-bottom: 6px !important;
     gap: 14px !important;
-    justify-content: flex-start !important;
+    
   }
 }
 
