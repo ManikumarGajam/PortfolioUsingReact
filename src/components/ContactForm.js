@@ -819,6 +819,18 @@ const StyledWrapper = styled.div`
 
     
   }
+@media (max-width: 1050px), (max-height: 800px) {
+  .main-center {
+    height: auto !important;
+    min-height: 0 !important;
+    min-width: unset !important;
+    padding-top: 10px !important;
+    padding-bottom: 6px !important;
+    gap: 14px !important;
+    justify-content: flex-start !important;
+  }
+}
+
 `;
 
 
