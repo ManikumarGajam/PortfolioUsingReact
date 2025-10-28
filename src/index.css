@@ -104,6 +104,6 @@ main, section {
 }
 @media (max-height: 700px) {
   .education-section {
-    min-height: 40vh !important;
+    min-height: 10vh !important;
   }
 }
