@@ -476,7 +476,6 @@
     min-width: 0 !important;
     max-width: 97vw !important;
     box-sizing: border-box;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    
   }
 }
