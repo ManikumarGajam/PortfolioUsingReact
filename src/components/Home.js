@@ -280,18 +280,7 @@ const Section = styled.section`
 }
 /* (max-width: 1050px) for mobile/tablet/desktop-mode-on-mobile,
    and reduce image size only if viewport height is small */
-@media (max-width: 1050px) {
-  .profile-img-box {
-   
-    margin-top: 14px !important;
-  }
-  
-  .section-inner {
-    gap: min(5vw, 22px) !important;
-  }
-}
 
-/* If height is especially limited, never shrink below 90px */
 
 
 `;
