@@ -258,7 +258,7 @@ const Section = styled.section`
     @media (max-width: 1023px) {
   min-height: unset !important;
   height: auto !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   padding-top: 18px !important;
   padding-bottom: 0 !important;
 }
