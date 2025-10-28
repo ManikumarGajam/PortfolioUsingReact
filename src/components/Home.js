@@ -256,7 +256,7 @@ const Section = styled.section`
     padding-bottom: 10px;
   }
     @media (max-width: 1023px) {
-  min-height: 60vh !important;
+  min-height: 40vh !important;
   align-items: center !important;
   
   
@@ -278,9 +278,6 @@ const Section = styled.section`
   .stats-row { justify-content: center !important; }
   .intro-title, .intro-name, .intro-role, .intro-desc { text-align: center !important; }
 }
-/* (max-width: 1050px) for mobile/tablet/desktop-mode-on-mobile,
-   and reduce image size only if viewport height is small */
-
 
 
 `;
