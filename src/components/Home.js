@@ -149,11 +149,6 @@ const Section = styled.section`
   background: linear-gradient(120deg,#04132e 35%,#07214d 100%);
   font-family: Poppins,sans-serif;
   width: 100vw;
-  @media (max-width: 950px) {
-    align-items: flex-start !important; // override for mobile/tablet/desktop-mode mobile
-    padding-top: 22px; /* or your preference */
-    min-height: 0;     /* so it doesn't force full height centering */
-  }
   .section-inner {
     display: flex;
     width: 95vw;
@@ -261,9 +256,9 @@ const Section = styled.section`
     padding-bottom: 10px;
   }
     @media (max-width: 1023px) {
-  min-height: 50vh !important;
+  min-height: unset !important;
   height: auto !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   padding-top: 18px !important;
   padding-bottom: 0 !important;
 }
