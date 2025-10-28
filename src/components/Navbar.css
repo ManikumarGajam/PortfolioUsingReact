@@ -61,10 +61,7 @@
   text-shadow: 0 0 5px rgba(166, 192, 254, 0.7);
   transition: color 0.4s ease;
   cursor: default;
-}
-
-.brand-light-italic:hover {
-  color: #f68084;
+   color: #f68084;
   text-shadow: 0 0 12px #f68084;
   background: none;
   -webkit-text-fill-color: initial;
