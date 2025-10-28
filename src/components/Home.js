@@ -255,6 +255,29 @@ const Section = styled.section`
     padding-top: 18px;  /* Adjust as you like for top space */
     padding-bottom: 10px;
   }
+
+  @media (min-width: 1024px) {
+  .section-inner {
+    justify-content: center;
+    margin: 0 auto;
+    width: 95vw;
+    max-width: 1050px;
+    align-items: center;
+    gap: 36px;
+  }
+  .profile-col {
+    flex: 1 0 320px;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-col {
+    flex: 2 1 500px;
+    min-width: 0;
+  }
+}
+
 `;
 
 const SocialRow = styled.div`
