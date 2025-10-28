@@ -277,6 +277,12 @@ const Section = styled.section`
     min-width: 0;
   }
 }
+@media (max-width: 950px) {
+  min-height: unset;
+  padding-top: 20px;
+  padding-bottom: 0;
+  align-items: flex-start;
+}
 
 `;
 
