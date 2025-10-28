@@ -473,7 +473,6 @@
 @media (max-width: 1100px) {
   .about-box {
     width: 80vw !important;
-    min-width: 0 !important;
     box-sizing: border-box;
   }
 }
