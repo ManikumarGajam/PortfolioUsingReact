@@ -262,6 +262,24 @@ const Section = styled.section`
   
 }
 
+@media (max-width: 1050px) {
+  .section-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100vw !important;
+    gap: 16px !important;
+  }
+  .info-col {
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-top: 10px !important;
+  }
+  .stats-row { justify-content: center !important; }
+  .intro-title, .intro-name, .intro-role, .intro-desc { text-align: center !important; }
+}
+
+
 `;
 
 const SocialRow = styled.div`
