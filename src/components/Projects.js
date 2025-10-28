@@ -66,12 +66,13 @@ export default function Projects() {
         <StyledSwiper
           modules={[Navigation, Pagination]}
           spaceBetween={24}
-          slidesPerView={3}
+          slidesPerView={1}  // Default for all sizes
           navigation
           pagination={{ clickable: true, dynamicBullets: true }}
           breakpoints={{
             0: { slidesPerView: 1, centeredSlides: false },
-            800: { slidesPerView: 3, centeredSlides: false }
+            600: { slidesPerView: 2, centeredSlides: false },   // Optional, for larger tablets
+            1024: { slidesPerView: 3, centeredSlides: false }    // Only wide/real desktops/laptops
           }}
           style={{ paddingBottom: "2.5rem" }}
         >
@@ -118,17 +119,17 @@ export default function Projects() {
                   <ProjectCard back>
                     <h3 style={{ color: "#22ffe5", marginBottom: 16 }}>{project.title}</h3>
                     <div className="project-moreinfo">{project.moreInfo}</div>
-                    
-                      <BackButton type="button" onClick={() => setFlippedIndex(null)}>
-                        Back
-                        <span className="icon">
-                          <svg height={24} width={24} viewBox="0 0 24 24">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M7.828 13l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414L7.828 11H20v2z" fill="currentColor" />
-                          </svg>
-                        </span>
-                      </BackButton>
-                    
+
+                    <BackButton type="button" onClick={() => setFlippedIndex(null)}>
+                      Back
+                      <span className="icon">
+                        <svg height={24} width={24} viewBox="0 0 24 24">
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path d="M7.828 13l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414L7.828 11H20v2z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </BackButton>
+
                   </ProjectCard>
                 </CardInnerVert>
               </CardFlipperVert>
@@ -441,18 +442,3 @@ const FooterText = styled.p`
   margin-top: 1.5rem;
   font-size: 14px;
 `;
-<StyledSwiper
-  modules={[Navigation, Pagination]}
-  spaceBetween={24}
-  slidesPerView={1}  // Default for all devices
-  navigation
-  pagination={{ clickable: true, dynamicBullets: true }}
-  breakpoints={{
-    0:   { slidesPerView: 1, centeredSlides: false },   // Always 1 for mobile
-    600: { slidesPerView: 2, centeredSlides: false },   // Maybe show 2 on big tablets
-    1024: { slidesPerView: 3, centeredSlides: false },  // Desktop/laptop only
-  }}
-  style={{ paddingBottom: "2.5rem" }}
->
-  {/* your SwiperSlide children */}
-</StyledSwiper>
