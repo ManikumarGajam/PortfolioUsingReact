@@ -18,7 +18,7 @@ export default function About() {
           About Me
         </motion.h2>
         <Row className="justify-content-center" >
-          <Col md={6}>
+          <Col md={8}>
             <motion.div
               className="about-box position-relative d-flex flex-column align-items-center"
               initial={{ rotateY: 15, opacity: 0 }}
