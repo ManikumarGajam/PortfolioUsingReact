@@ -251,7 +251,7 @@ const StyledWrapper = styled.div`
     border-radius: 32px;
     background: transparent;
     padding: 8px 12px;
-    font-size: 0.99em;
+    font-size: 1.3em;
     color: #fff;
     outline: none;
     transition: border-color 0.3s;
@@ -732,8 +732,8 @@ const StyledWrapper = styled.div`
     max-height: 350px !important;
   }
   .circle-form {
-    width: 90vw !important;
-    height: 90vw !important;
+    width: 95vw !important;
+    height: 95vw !important;
     min-width: 250px !important;
     min-height: 250px !important;
     max-width: 370px !important;
@@ -832,6 +832,5 @@ const StyledWrapper = styled.div`
 }
 
 `;
-
 
 export default ContactForm;

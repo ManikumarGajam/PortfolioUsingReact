@@ -1,0 +1,71 @@
+.custom-navbar {
+  background: #16033a !important;
+  color: white !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.23rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 12px rgba(16,28,44,0.06);
+  border-bottom: 1.5px solid #e7e7e7;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.custom-navbar .navbar-brand {
+  font-weight: 700;
+  color: white !important;
+  font-size: 1.39rem;
+  letter-spacing: 0.01em;
+}
+
+.custom-navbar .nav-link {
+  
+  color: white !important;
+  font-size: 1em;
+  margin-left: 0.95em;
+  margin-right: 0.1em;
+  transition: color 0.2s;
+}
+
+.custom-navbar .nav-link:hover, 
+.custom-navbar .nav-link.active,
+.custom-navbar .nav-link:focus {
+  color: #10cb10 !important;
+  text-decoration: underline;
+  background: none;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: #ddd0d0;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .custom-navbar {
+    font-size: 0.8rem;
+  }
+  .custom-navbar .navbar-brand {
+    font-size: 1.10rem;
+  }
+}
+.brand-light-italic {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 300; /* Light font weight */
+  font-style: italic; /* Italic style */
+  font-size: 1.5rem;
+  letter-spacing: 0.1em; /* Slightly spaced letters */
+  color: #3a5a7a; /* Soft blueish-black color */
+  background: linear-gradient(90deg, #a6c0fe 20%, #f68084 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(166, 192, 254, 0.7);
+  transition: color 0.4s ease;
+  cursor: default;
+}
+
+.brand-light-italic:hover {
+  color: #f68084;
+  text-shadow: 0 0 12px #f68084;
+  background: none;
+  -webkit-text-fill-color: initial;
+}

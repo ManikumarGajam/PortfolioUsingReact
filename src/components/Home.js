@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
 import styled from "styled-components";
+import "./Home.css"
 
 export default function Home() {
   return (
@@ -326,5 +327,26 @@ const SocialRow = styled.div`
     0% { transform: translateY(-20px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
   }
+    .intro-name {
+  font-weight: 300;               /* Light weight */
+  font-style: italic;             /* Italic style */
+  letter-spacing: 0.08em;         /* Increase letter spacing */
+  background: linear-gradient(90deg, #a6c0fe 20%, #f68084 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px rgba(166, 192, 254, 0.6);
+  transition: background 0.5s ease, text-shadow 0.5s ease;
+  cursor: default;
+}
+
+.intro-name:hover {
+  background: linear-gradient(90deg, #f68084 20%, #a6c0fe 80%);
+  text-shadow: 0 0 12px #f68084;
+  -webkit-text-fill-color: initial;
+  color: #f68084 !important;
+}
+
 `;
 
