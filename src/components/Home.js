@@ -282,22 +282,28 @@ const Section = styled.section`
    and reduce image size only if viewport height is small */
 @media (max-width: 1050px) {
   .profile-img-box {
-    width: min(32vw, 150px);
-    height: min(32vw, 150px);
+    width: clamp(120px, 26vw, 240px) !important;
+    height: clamp(120px, 26vw, 240px) !important;
+    margin-top: 14px !important;
   }
   .profile-img {
-    width: min(85%, 120px);
-    height: min(85%, 120px);
+    width: clamp(95px, 85%, 220px) !important;
+    height: clamp(95px, 85%, 220px) !important;
+  }
+  .section-inner {
+    gap: min(5vw, 22px) !important;
   }
 }
+
+/* If height is especially limited, never shrink below 90px */
 @media (max-width: 1050px) and (max-height: 600px) {
   .profile-img-box {
-    width: min(23vh, 85px);
-    height: min(23vh, 85px);
+    width: clamp(90px, 20vw, 140px) !important;
+    height: clamp(90px, 20vw, 140px) !important;
   }
   .profile-img {
-    width: min(85%, 75px);
-    height: min(85%, 75px);
+    width: clamp(75px, 70%, 120px) !important;
+    height: clamp(75px, 70%, 120px) !important;
   }
 }
 
