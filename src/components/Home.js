@@ -258,31 +258,7 @@ const Section = styled.section`
     @media (max-width: 1023px) {
   min-height: 60vh !important;
   align-items: center !important;
-  .section-inner {
-    width: 100vw;
-    max-width: 1024px;
-    margin: 0 auto;
-    gap: 32px;
-  }
-  .profile-col, .info-col {
-    width: 50vw;
-    max-width: 420px;
-    min-width: 280px;
-  }
-  .profile-img-box {
-    width: 220px;
-    height: 220px;
-    max-width: 32vw;
-    max-height: 32vw;
-  }
-  .profile-img {
-    width: 190px; height: 190px;
-  }
-  .intro-name {
-    font-size: 2.5rem; /* instead of very large sizes */
-    word-break: break-word;
-    max-width: 90vw;
-  }
+  
   
 }
 
