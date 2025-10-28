@@ -256,11 +256,10 @@ const Section = styled.section`
     padding-bottom: 10px;
   }
     @media (max-width: 1023px) {
-  min-height: 50vh !important;
-  height: 50vh !important;
+  min-height: 100vh !important;
+  
   align-items: center !important;
-  padding-top: 18px !important;
-  padding-bottom: 0 !important;
+  
 }
 
 `;
