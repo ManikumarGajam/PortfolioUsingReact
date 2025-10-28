@@ -321,6 +321,7 @@ const StyledSwiper = styled(Swiper)`
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    color: white;
   }
   .swiper-button-prev { left: 0; }
   .swiper-button-next { right: 0; }
@@ -334,6 +335,7 @@ const StyledSwiper = styled(Swiper)`
     padding-left: 31px;
     padding-right: 31px;
   }
+    
 `;
 
 
