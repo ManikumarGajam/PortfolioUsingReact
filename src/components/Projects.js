@@ -441,3 +441,18 @@ const FooterText = styled.p`
   margin-top: 1.5rem;
   font-size: 14px;
 `;
+<StyledSwiper
+  modules={[Navigation, Pagination]}
+  spaceBetween={24}
+  slidesPerView={1}  // Default for all devices
+  navigation
+  pagination={{ clickable: true, dynamicBullets: true }}
+  breakpoints={{
+    0:   { slidesPerView: 1, centeredSlides: false },   // Always 1 for mobile
+    600: { slidesPerView: 2, centeredSlides: false },   // Maybe show 2 on big tablets
+    1024: { slidesPerView: 3, centeredSlides: false },  // Desktop/laptop only
+  }}
+  style={{ paddingBottom: "2.5rem" }}
+>
+  {/* your SwiperSlide children */}
+</StyledSwiper>
