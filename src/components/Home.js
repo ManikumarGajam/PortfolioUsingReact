@@ -259,21 +259,7 @@ const Section = styled.section`
   min-height: 100vh !important;
   
   align-items: center !important;
-  .section-inner {
-      flex-direction: column;
-      align-items: center;
-      width: 100vw;
-      gap: 16px;
-    }
-    .info-col {
-      align-items: center;
-      text-align: center;
-      padding-left: 0;
-      margin-top: 10px;
-    }
-    .stats-row { justify-content: center; }
-    .intro-title, .intro-name, .intro-role, .intro-desc { text-align: center !important; }
-  }
+  
   
 }
 
