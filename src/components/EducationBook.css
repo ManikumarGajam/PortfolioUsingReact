@@ -490,3 +490,13 @@ ul {
     flex-direction: column !important;
   }
 }
+@media (max-height: 550px) {
+  .book {
+    height: 200px !important;
+    width: 150px !important;
+  }
+  .modelViewPort {
+    width: 8rem !important;
+    aspect-ratio: 1 !important;
+  }
+}
