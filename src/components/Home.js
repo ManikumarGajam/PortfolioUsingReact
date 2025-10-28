@@ -280,19 +280,27 @@ const Section = styled.section`
 }
 /* (max-width: 1050px) for mobile/tablet/desktop-mode-on-mobile,
    and reduce image size only if viewport height is small */
-@media (max-width: 1050px) and (max-height: 600px) {
+@media (max-width: 1050px) {
   .profile-img-box {
-    width: 120px !important;
-    height: 120px !important;
+    width: min(32vw, 150px);
+    height: min(32vw, 150px);
   }
   .profile-img {
-    width: 95px !important;
-    height: 95px !important;
-  }
-  .section-inner {
-    gap: 8px !important;
+    width: min(85%, 120px);
+    height: min(85%, 120px);
   }
 }
+@media (max-width: 1050px) and (max-height: 600px) {
+  .profile-img-box {
+    width: min(23vh, 85px);
+    height: min(23vh, 85px);
+  }
+  .profile-img {
+    width: min(85%, 75px);
+    height: min(85%, 75px);
+  }
+}
+
 
 
 `;
