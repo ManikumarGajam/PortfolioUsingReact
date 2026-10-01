@@ -62,7 +62,7 @@ export default function About() {
               <p className='mt-5 '>
                 I’m a dedicated MERN Stack Developer with hands-on experience in building responsive and scalable web applications.
 Along with the MERN stack, I also have knowledge of Java, JDBC, and MySQL, which strengthens my understanding of backend logic and database connectivity.
-I’m passionate about learning new technologies and developing efficient, real-world solutions.
+I’m passionate about learning new technologies and developing efficient, hello real-world solutions.
               </p>
               
             </motion.div>
